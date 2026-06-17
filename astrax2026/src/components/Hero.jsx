@@ -1,4 +1,5 @@
 import "../styles/Hero.css";
+import titleImg from "../assets/title.png";
 
 import Countdown from "./Countdown";
 
@@ -9,8 +10,8 @@ function Hero() {
     <section className="hero-content">
 
       <div className="marvel-logo-box">
-        <h1 className="marvel-logo">
-          ASTRA <span>X</span> 2026
+        <h1 className="marvel-logo-heading">
+          <img src={titleImg} alt="ASTRA X 2026" className="marvel-logo-image" />
         </h1>
       </div>
 
