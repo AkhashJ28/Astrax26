@@ -35,8 +35,8 @@
   position:absolute;
   inset:0;
   background: 
-    radial-gradient(circle at center, rgba(15, 16, 21, 0.45) 0%, rgba(15, 16, 21, 0.9) 100%),
-    radial-gradient(rgba(226, 54, 54, 0.08) 1.5px, transparent 1.5px);
+    radial-gradient(circle at center, rgba(9, 5, 20, 0.45) 0%, rgba(9, 5, 20, 0.95) 100%),
+    radial-gradient(rgba(139, 92, 246, 0.08) 1.5px, transparent 1.5px);
   background-size: 100% 100%, 20px 20px;
   backdrop-filter: saturate(1.2);
   z-index:-1;

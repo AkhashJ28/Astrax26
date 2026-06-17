@@ -1,11 +1,18 @@
 /* src/index.css */
 
 :root {
-  --marvel-red: #E23636;
-  --marvel-red-glow: rgba(226, 54, 54, 0.6);
-  --marvel-red-dark: #9F1C1C;
-  --marvel-black: #0F1015;
-  --marvel-charcoal: #1E1F26;
+  --theme-purple: #7038FF; /* Cosmic Royal Purple */
+  --theme-purple-glow: rgba(112, 56, 255, 0.5);
+  --theme-purple-dark: #4C1D95;
+  
+  --theme-gold: #DFB24F; /* Refined Metallic Gold */
+  --theme-gold-glow: rgba(223, 178, 79, 0.45);
+  --theme-gold-dark: #A37527;
+  --theme-gold-gradient: linear-gradient(135deg, #DFB24F 0%, #A37527 100%);
+  --theme-purple-gradient: linear-gradient(135deg, #7038FF 0%, #4C1D95 100%);
+  
+  --marvel-black: #080510; /* Obsidian violet-black */
+  --marvel-charcoal: #130E26; /* Dark slate-purple */
   --marvel-white: #FFFFFF;
   --font-bebas: 'Bebas Neue', sans-serif;
   --font-orbitron: 'Orbitron', sans-serif;
@@ -37,11 +44,11 @@ body{
   background: var(--marvel-black);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--marvel-red);
+  background: var(--theme-purple);
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--marvel-red-dark);
+  background: var(--theme-purple-dark);
 }
 
 /* ANIMATIONS */
@@ -56,10 +63,10 @@ body{
 
 @keyframes pulse-glow {
   0%, 100% {
-    box-shadow: 0 0 15px var(--marvel-red-glow);
+    box-shadow: 0 0 15px var(--theme-purple-glow);
   }
   50% {
-    box-shadow: 0 0 30px rgba(226, 54, 54, 0.9);
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
   }
 }
 

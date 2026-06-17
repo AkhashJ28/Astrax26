@@ -12,8 +12,8 @@
 .countdown-card {
     text-align: center;
     background: rgba(15, 16, 21, 0.7);
-    border: 1px solid rgba(226, 54, 54, 0.25);
-    border-top: 3.5px solid var(--marvel-red);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    border-top: 3.5px solid var(--theme-purple);
     border-radius: 6px;
     padding: 20px 24px;
     min-width: 120px;
@@ -51,9 +51,9 @@
     background: linear-gradient(
         to bottom,
         transparent 0%,
-        rgba(226, 54, 54, 0) 35%,
-        rgba(226, 54, 54, 0.45) 50%,
-        rgba(226, 54, 54, 0) 65%,
+        rgba(212, 175, 55, 0) 35%,
+        rgba(212, 175, 55, 0.5) 50%,
+        rgba(212, 175, 55, 0) 65%,
         transparent 100%
     );
     transform: rotate(-35deg);
@@ -65,8 +65,8 @@
 
 .countdown-card:hover {
     transform: translateY(-8px) scale(1.08) skewX(-8deg);
-    border-color: var(--marvel-red);
-    box-shadow: 0 15px 35px rgba(226, 54, 54, 0.45);
+    border-color: var(--theme-gold);
+    box-shadow: 0 15px 35px var(--theme-gold-glow);
 }
 
 .countdown-card:hover::after {
@@ -90,8 +90,8 @@
 .countdown-card:hover h2 {
     color: var(--marvel-white);
     text-shadow: 
-      0 0 15px var(--marvel-red-glow),
-      0 0 30px rgba(226, 54, 54, 0.4);
+      0 0 15px var(--theme-purple-glow),
+      0 0 30px rgba(139, 92, 246, 0.4);
 }
 
 .countdown span {
@@ -106,16 +106,16 @@
 }
 
 .countdown-card:hover span {
-    color: var(--marvel-red);
-    text-shadow: 0 0 5px var(--marvel-red-glow);
+    color: var(--theme-gold);
+    text-shadow: 0 0 5px var(--theme-gold-glow);
 }
 
 .countdown-separator {
     font-size: 3rem;
     font-family: var(--font-orbitron);
     font-weight: bold;
-    color: var(--marvel-red);
-    text-shadow: 0 0 12px var(--marvel-red-glow);
+    color: var(--theme-gold);
+    text-shadow: 0 0 12px var(--theme-gold-glow);
     animation: blink 1.5s infinite;
     transform: translateY(-5px);
 }

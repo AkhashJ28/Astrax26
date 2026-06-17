@@ -17,50 +17,57 @@
     background:rgba(15, 16, 21, 0.7);
     backdrop-filter:blur(20px);
 
-    border-bottom:1px solid rgba(226, 54, 54, 0.15);
+    border-bottom:1px solid rgba(139, 92, 246, 0.2);
 
     z-index:1000;
     transition: background var(--transition-med);
 }
 
-.logo{
-    font-size: 2.2rem;
-    font-family: var(--font-bebas);
-    font-weight: 800;
+.logo {
+  font-size: 2.2rem;
+  font-family: var(--font-bebas);
+  font-weight: 800;
+  letter-spacing: 2px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
 
-    letter-spacing: 2px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    cursor: pointer;
-
-    color: transparent;
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-image: url('../assets/marvel_comic_panels.png');
-    background-size: 300px auto;
-    animation: flipbook 1.5s steps(10) infinite;
-    text-shadow: none;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-image: url('../assets/marvel_comic_panels.png');
+  background-size: 300px auto;
+  animation: flipbook 1.5s steps(10) infinite;
+  text-shadow: none;
+  transition: all var(--transition-med);
 }
 
 .logo:hover {
-  -webkit-text-fill-color: var(--marvel-white);
-  color: var(--marvel-white);
+  -webkit-text-fill-color: var(--theme-purple);
+  color: var(--theme-purple);
   background-image: none;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 0 12px var(--theme-purple-glow);
   animation-play-state: paused;
 }
 
 .logo span {
   font-family: var(--font-orbitron);
-  color: var(--marvel-red);
-  -webkit-text-fill-color: var(--marvel-red);
+  color: var(--theme-gold);
+  -webkit-text-fill-color: var(--theme-gold);
   font-weight: 900;
   font-style: normal;
-  text-shadow: 0 0 12px var(--marvel-red-glow);
+  text-shadow: 0 0 12px var(--theme-gold-glow);
   display: inline-block;
   margin: 0 4px;
+  transition: all var(--transition-med);
+}
+
+.logo:hover span {
+  color: var(--theme-gold);
+  -webkit-text-fill-color: var(--theme-gold);
+  text-shadow: 0 0 20px var(--theme-gold-glow);
 }
 
 .nav-links{
@@ -81,7 +88,7 @@
 }
 
 .nav-links li:hover{
-    color: var(--marvel-red);
+    color: var(--theme-gold);
 }
 
 .nav-links li::after {
@@ -91,7 +98,7 @@
   height: 2px;
   bottom: -6px;
   left: 50%;
-  background-color: var(--marvel-red);
+  background-color: var(--theme-gold);
   transition: width var(--transition-med), left var(--transition-med);
 }
 
@@ -103,22 +110,24 @@
 .register-btn{
   padding:12px 28px;
 
-  background: var(--marvel-red);
-  border: 1px solid var(--marvel-red);
-  color: var(--marvel-white);
+  background: var(--theme-gold-gradient);
+  border: 1px solid transparent;
+  color: var(--marvel-black);
   font-family: var(--font-bebas);
   font-size: 1.1rem;
   letter-spacing: 1.5px;
+  font-weight: bold;
 
   border-radius: 4px;
   cursor:pointer;
   transition: all var(--transition-med);
-  box-shadow: 0 4px 15px rgba(226, 54, 54, 0.3);
+  box-shadow: 0 4px 15px var(--theme-gold-glow);
 }
 
 .register-btn:hover {
   background: transparent;
-  color: var(--marvel-red);
-  box-shadow: 0 0 20px var(--marvel-red-glow);
+  color: var(--theme-gold);
+  border-color: var(--theme-gold);
+  box-shadow: 0 0 20px var(--theme-gold-glow);
   transform: translateY(-2px);
 }
