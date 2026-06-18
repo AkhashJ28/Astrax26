@@ -153,6 +153,22 @@
   left: 0;
 }
 
+/* Active Stone State */
+.nav-item.active-stone {
+  color: var(--stone-color) !important;
+  text-shadow: 0 0 10px var(--stone-glow);
+}
+
+.nav-item.active-stone::before {
+  opacity: 1;
+  box-shadow: 0 0 10px var(--stone-color);
+}
+
+.nav-item.active-stone::after {
+  width: 100%;
+  left: 0;
+}
+
 .register-btn{
   padding:12px 28px;
 
