@@ -232,4 +232,120 @@
     transform: rotate(45deg) scale(1.15);
     box-shadow: 0 0 12px var(--stone-color), inset -1px -1px 2px rgba(0, 0, 0, 0.4);
   }
+}
+
+.desktop-reg-btn {
+  display: block;
+}
+
+.nav-mobile-register {
+  display: none;
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 1001;
+  transition: transform var(--transition-med);
+}
+
+.hamburger .bar {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--marvel-white);
+  border-radius: 2px;
+  transition: all var(--transition-med);
+}
+
+/* Transform hamburger bars into X on active state */
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+  background-color: var(--theme-purple);
+  box-shadow: 0 0 8px var(--theme-purple-glow);
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+  background-color: var(--theme-purple);
+  box-shadow: 0 0 8px var(--theme-purple-glow);
+}
+
+/* RESPONSIVE MEDIA QUERY */
+@media (max-width: 900px) {
+  .navbar {
+    padding: 0 24px;
+    height: 75px;
+  }
+
+  .logo {
+    width: 150px;
+    height: 44px;
+  }
+  
+  .logo-text {
+    font-size: 1.8rem;
+  }
+
+  .desktop-reg-btn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 280px;
+    height: 100vh;
+    background: rgba(8, 5, 16, 0.96);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-left: 1px solid rgba(139, 92, 246, 0.25);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 100px 30px 40px 30px;
+    gap: 24px;
+    z-index: 1000;
+    transition: right var(--transition-med);
+    box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  .nav-item {
+    font-size: 1.05rem;
+    width: 100%;
+    padding: 8px 0;
+    gap: 12px;
+  }
+
+  .nav-item::after {
+    display: none;
+  }
+
+  .nav-mobile-register {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .mobile-reg-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px;
+  }
 }
