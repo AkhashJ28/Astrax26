@@ -14,10 +14,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <div className="logo-img-wrapper">
-          <img src={navLogo} alt="Astrax Logo" className="logo-img" />
-        </div>
-        <span className="logo-text">ASTRAX26</span>
+        <img src={navLogo} alt="Astrax Logo" className="logo-img" />
       </div>
 
       <div className={`hamburger ${isMenuOpen ? "active" : ""}`} onClick={toggleMenu}>
