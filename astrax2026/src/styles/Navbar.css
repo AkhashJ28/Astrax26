@@ -134,6 +134,29 @@
   filter: brightness(1.2);
 }
 
+/* Custom Image Stones */
+.nav-item.time::before,
+.nav-item.power::before {
+  display: none;
+}
+
+.nav-stone-img {
+  width: 26px;
+  height: 26px;
+  object-fit: contain;
+  transition: transform var(--transition-med), filter var(--transition-med);
+  filter: drop-shadow(0 0 4px var(--stone-glow));
+}
+
+.nav-item:hover .nav-stone-img {
+  transform: scale(1.3);
+  filter: drop-shadow(0 0 10px var(--stone-color));
+}
+
+.nav-item.active-stone .nav-stone-img {
+  filter: drop-shadow(0 0 8px var(--stone-color));
+}
+
 .nav-item::after {
   content: '';
   position: absolute;

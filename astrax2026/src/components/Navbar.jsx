@@ -1,5 +1,7 @@
 import { useState } from "react";
 import navLogo from "../assets/nav-logo.png";
+import tImg from "../assets/t.png";
+import pImg from "../assets/p.png";
 import "../styles/Navbar.css";
 
 // src/components/Navbar.jsx
@@ -31,8 +33,14 @@ function Navbar({ activeTab, onTabChange }) {
       </div>
 
       <ul className={`nav-links ${isMenuOpen ? "active" : ""}`}>
-        <li className={`nav-item power ${activeTab === "Home" ? "active-stone" : ""}`} onClick={() => handleTabClick("Home")}>Home</li>
-        <li className={`nav-item time ${activeTab === "Events" ? "active-stone" : ""}`} onClick={() => handleTabClick("Events")}>Events</li>
+        <li className={`nav-item power ${activeTab === "Home" ? "active-stone" : ""}`} onClick={() => handleTabClick("Home")}>
+          <img src={pImg} alt="Power" className="nav-stone-img" style={{ width: "16px", height: "16px" }} />
+          Home
+        </li>
+        <li className={`nav-item time ${activeTab === "Events" ? "active-stone" : ""}`} onClick={() => handleTabClick("Events")}>
+          <img src={tImg} alt="Time" className="nav-stone-img" />
+          Events
+        </li>
         <li className={`nav-item reality ${activeTab === "About Us" ? "active-stone" : ""}`} onClick={() => handleTabClick("About Us")}>About Us</li>
         <li className={`nav-item soul ${activeTab === "Workshops" ? "active-stone" : ""}`} onClick={() => handleTabClick("Workshops")}>Workshops</li>
         <li className={`nav-item mind ${activeTab === "Gallery" ? "active-stone" : ""}`} onClick={() => handleTabClick("Gallery")}>Gallery</li>
