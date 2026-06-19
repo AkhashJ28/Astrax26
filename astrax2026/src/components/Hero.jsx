@@ -1,5 +1,11 @@
 import "../styles/Hero.css";
 import titleImg from "../assets/title.png";
+import tesImg from "../assets/tes.png";
+import aetImg from "../assets/aet.png";
+import powImg from "../assets/pow.png";
+import souImg from "../assets/sou.png";
+import sepImg from "../assets/sep.png";
+import eyeImg from "../assets/eye.png";
 import Countdown from "./Countdown";
 
 // src/components/Hero.jsx
@@ -37,25 +43,40 @@ function Hero() {
       {/* Infinity stone decorative strip */}
       <div className="hero-stones-strip">
         {[
-          { color: "#a872ff", label: "Power" },
-          { color: "#3aff8f", label: "Time" },
-          { color: "#ff3e70", label: "Reality" },
-          { color: "#ff8e3c", label: "Soul" },
-          { color: "#ffe14c", label: "Mind" },
-          { color: "#3cb6ff", label: "Space" },
+          { color: "#a872ff", label: "Power", img: powImg },
+          { color: "#3aff8f", label: "Time", img: eyeImg },
+          { color: "#ff3e70", label: "Reality", img: aetImg },
+          { color: "#ff8e3c", label: "Soul", img: souImg, size: 85, margin: -25 },
+          { color: "#ffe14c", label: "Mind", img: sepImg },
+          { color: "#3cb6ff", label: "Space", img: tesImg, size: 46, margin: -7 },
         ].map((stone, i) => (
           <div key={i} className="hero-stone" style={{ animationDelay: `${2.2 + i * 0.12}s` }}>
-            <div
-              className="stone-gem"
-              style={{
-                "--stone-color": stone.color,
-                "--stone-glow": `${stone.color}99`,
-              }}
-            >
-              <div className="stone-core" style={{ background: stone.color }} />
-              <div className="stone-facets" />
-              <div className="stone-glint" />
-            </div>
+            {stone.img ? (
+              <img 
+                src={stone.img} 
+                alt={stone.label} 
+                className="stone-gem" 
+                style={{ 
+                  objectFit: "contain",
+                  width: stone.size ? `${stone.size}px` : "75px",
+                  height: stone.size ? `${stone.size}px` : "75px",
+                  marginTop: stone.margin !== undefined ? `${stone.margin}px` : "-20px",
+                  marginBottom: stone.margin !== undefined ? `${stone.margin}px` : "-20px"
+                }} 
+              />
+            ) : (
+              <div
+                className="stone-gem"
+                style={{
+                  "--stone-color": stone.color,
+                  "--stone-glow": `${stone.color}99`,
+                }}
+              >
+                <div className="stone-core" style={{ background: stone.color }} />
+                <div className="stone-facets" />
+                <div className="stone-glint" />
+              </div>
+            )}
             <span className="stone-label" style={{ color: stone.color }}>{stone.label}</span>
           </div>
         ))}

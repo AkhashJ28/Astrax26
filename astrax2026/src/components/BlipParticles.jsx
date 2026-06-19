@@ -40,7 +40,7 @@ function BlipParticles({ color, pageRef }) {
 
         // Dust particles are small, sharp, and fine
         this.shape = Math.floor(Math.random() * 3);
-        this.size  = Math.random() * 2.5 + 0.5;
+        this.size  = Math.random() * 4.0 + 1.5;
 
         // Initial velocity with a spread, floating upward and backward (left)
         const angle = -Math.PI / 2 + (Math.random() - 0.5) * Math.PI * 0.8;
@@ -193,7 +193,7 @@ function BlipParticles({ color, pageRef }) {
       // Spawn particles along the jagged vertical wavefront
       if (elapsed < WAVE_DURATION + 50) {
         const BAND = 45;
-        const DENSITY = 80; // INCREASED DENSITY for thicker dust cloud
+        const DENSITY = 250; // INCREASED DENSITY for thicker dust cloud
         for (let i = 0; i < DENSITY; i++) {
           const py = Math.random() * height;
           const wX = getWavefrontX(py, elapsed);
@@ -207,7 +207,7 @@ function BlipParticles({ color, pageRef }) {
         }
 
         // A cloud of extremely fine micro-dust trailing behind to give a powdery vanishing effect
-        for (let i = 0; i < 60; i++) {
+        for (let i = 0; i < 200; i++) {
           if (Math.random() < 0.9) {
             const py = Math.random() * height;
             const wX = getWavefrontX(py, elapsed);
@@ -215,7 +215,7 @@ function BlipParticles({ color, pageRef }) {
             if (tx >= 0 && tx <= width) {
               const tp = new Particle(tx, py);
               tp.decay *= 0.3; // linger much longer in the air (slower fade)
-              tp.size  = Math.random() * 2.0 + 0.5; // Slightly larger for better visibility
+              tp.size  = Math.random() * 3.5 + 1.0; // Slightly larger for better visibility
               tp.alpha = Math.random() * 0.6 + 0.3; // Higher opacity to be more visible
               
               // Bright fine dust matching the tab's stone color
