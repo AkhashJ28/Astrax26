@@ -1,0 +1,85 @@
+import { useState, useRef } from "react";
+import "./App.css";
+import "./styles/Pages.css";
+
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Events from "./components/Events";
+import AboutUs from "./components/AboutUs";
+import Workshops from "./components/Workshops";
+import Gallery from "./components/Gallery";
+import Sponsors from "./components/Sponsors";
+
+import bgVideo from "./assets/hero-video.mp4";
+import introVideo from "./assets/intro.mp4";
+
+function App() {
+  const [showIntro, setShowIntro] = useState(true);
+  const [fadeIntro, setFadeIntro] = useState(false);
+  const videoRef = useRef(null);
+
+  const [activeTab, setActiveTab] = useState("Home");
+
+  const handleIntroEnd = () => {
+    setFadeIntro(true);
+    setTimeout(() => setShowIntro(false), 800);
+  };
+
+  const handleSkip = () => handleIntroEnd();
+
+  const handleTabChange = (tabName) => {
+    if (tabName === activeTab) return;
+    setActiveTab(tabName);
+  };
+
+  return (
+    <div className="app">
+      {showIntro && (
+        <div className={`intro-preloader ${fadeIntro ? "fade-out" : ""}`}>
+          <video
+            ref={videoRef}
+            src={introVideo}
+            autoPlay
+            muted
+            playsInline
+            onEnded={handleIntroEnd}
+            className="intro-video"
+          />
+          <div className="intro-controls">
+            <button className="intro-btn skip-btn" onClick={handleSkip}>
+              SKIP INTRO <span className="arrow">→</span>
+            </button>
+          </div>
+        </div>
+      )}
+
+      {activeTab === "Home" && (
+        <>
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            className="bg-video"
+          >
+            <source src={bgVideo} type="video/mp4" />
+          </video>
+          <div className="overlay"></div>
+        </>
+      )}
+
+      <Navbar activeTab={activeTab} onTabChange={handleTabChange} />
+
+      <div className="page-container">
+        {activeTab === "Home"      && <Hero />}
+        {activeTab === "Events"    && <Events />}
+        {activeTab === "About Us"  && <AboutUs />}
+        {activeTab === "Workshops" && <Workshops setActivePage={(page) => handleTabChange(page)} />}
+        {activeTab === "Gallery"   && <Gallery />}
+        {activeTab === "Sponsors"  && <Sponsors />}
+      </div>
+    </div>
+  );
+}
+
+export default App;

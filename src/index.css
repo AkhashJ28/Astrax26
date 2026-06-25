@@ -1,0 +1,76 @@
+/* src/index.css */
+
+:root {
+  --theme-purple: #7038FF; /* Cosmic Royal Purple */
+  --theme-purple-glow: rgba(112, 56, 255, 0.5);
+  --theme-purple-dark: #4C1D95;
+  
+  --theme-gold: #DFB24F; /* Refined Metallic Gold */
+  --theme-gold-glow: rgba(223, 178, 79, 0.45);
+  --theme-gold-dark: #A37527;
+  --theme-gold-gradient: linear-gradient(135deg, #DFB24F 0%, #A37527 100%);
+  --theme-purple-gradient: linear-gradient(135deg, #7038FF 0%, #4C1D95 100%);
+  
+  --marvel-black: #080510; /* Obsidian violet-black */
+  --marvel-charcoal: #130E26; /* Dark slate-purple */
+  --marvel-white: #FFFFFF;
+  --font-bebas: 'Bebas Neue', sans-serif;
+  --font-orbitron: 'Orbitron', sans-serif;
+  --font-cinzel: 'Cinzel Decorative', serif;
+  --font-montserrat: 'Montserrat', sans-serif;
+  
+  --transition-fast: 0.2s ease;
+  --transition-med: 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family: var(--font-montserrat);
+  background: radial-gradient(circle at center, #1E103C 0%, #080510 80%);
+  color: var(--marvel-white);
+  overflow-x:hidden;
+}
+
+/* HIDE SCROLLBARS GLOBALLY */
+::-webkit-scrollbar {
+  display: none;
+}
+
+body, .app, * {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* ANIMATIONS */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 15px var(--theme-purple-glow);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(139, 92, 246, 0.8);
+  }
+}
+
+@keyframes flipbook {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
