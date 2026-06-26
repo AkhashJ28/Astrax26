@@ -65,7 +65,12 @@ html.home-active,
 body.home-active,
 html.home-active #root,
 html.home-active .app,
-html.home-active .page-container {
+html.home-active .page-container,
+html.gallery-active,
+body.gallery-active,
+html.gallery-active #root,
+html.gallery-active .app,
+html.gallery-active .page-container {
   overflow: hidden !important;
   height: 100vh !important;
   max-height: 100vh !important;

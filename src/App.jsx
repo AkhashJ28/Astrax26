@@ -30,6 +30,14 @@ function App() {
       document.documentElement.classList.remove("home-active");
       document.body.classList.remove("home-active");
     }
+
+    if (activeTab === "Gallery") {
+      document.documentElement.classList.add("gallery-active");
+      document.body.classList.add("gallery-active");
+    } else {
+      document.documentElement.classList.remove("gallery-active");
+      document.body.classList.remove("gallery-active");
+    }
   }, [activeTab]);
 
   const handleIntroEnd = () => {

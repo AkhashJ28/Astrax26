@@ -397,7 +397,7 @@
   justify-content: center;
   align-items: center;
   z-index: 10;
-  padding-top: 110px; /* Space for navbar */
+  padding-top: 75px; /* Space for navbar, reduced to shift elements up */
   padding-bottom: 50px;
 }
 
@@ -406,7 +406,7 @@
   width: auto;
   max-width: 80%;
   object-fit: contain;
-  margin: -4vh 0 -11vh 0; /* Negative top margin to pull image up, negative bottom to pull windows up */
+  margin: -6vh 0 -13vh 0; /* More negative top/bottom margin to pull title and portals higher */
   filter: drop-shadow(0 5px 15px rgba(212, 175, 55, 0.4));
 }
 
