@@ -85,14 +85,14 @@ function Navbar({ activeTab, onTabChange, forceHidden }) {
           Sponsors
         </li>
         <li className="nav-mobile-register">
-          <button className="register-btn mobile-reg-btn" onClick={() => handleTabClick("Workshops")}>
+          <button className="register-btn mobile-reg-btn" onClick={(e) => e.preventDefault()}>
             Register Now
           </button>
         </li>
       </ul>
 
       <div className="nav-actions-container">
-        <button className="register-btn desktop-reg-btn" onClick={() => handleTabClick("Workshops")}>
+        <button className="register-btn desktop-reg-btn" onClick={(e) => e.preventDefault()}>
           Register Now
         </button>
       </div>
