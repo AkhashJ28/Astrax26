@@ -102,7 +102,7 @@
   font-size: 1.15rem;
   font-weight: 700;
   letter-spacing: 8px;
-  color: var(--theme-gold);
+  color: var(--marvel-white);
   opacity: 0;
   text-shadow: 0 0 15px var(--theme-gold-glow);
   animation: slide-up var(--transition-slow) forwards 1.4s;

@@ -84,7 +84,7 @@ function Hero({ onTabChange }) {
 
       {/* CTA buttons */}
       <div className="hero-buttons">
-        <button className="primary-btn" onClick={() => onTabChange && onTabChange("Workshops")}>
+        <button className="primary-btn" onClick={(e) => e.preventDefault()}>
           <span className="btn-glow" />
           Register Now
         </button>
