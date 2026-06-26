@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import "../styles/Events.css";
-import { useLowPerf } from "../hooks/useLowPerf";
 
 import eventDebate from "../assets/event-debate.png";
 import eventTva from "../assets/event-tva.png";
@@ -29,7 +28,7 @@ const eventDatabase = [
 const PARTICLE_COUNT = 28;
 
 function Events() {
-  const lowPerf = useLowPerf();
+
   const containerRef    = useRef(null);
   const eyeWrapperRef   = useRef(null);
   const eyeOpenImgRef   = useRef(null);
@@ -327,11 +326,9 @@ function Events() {
   return (
     <div className="events-page-wrapper" ref={containerRef}>
       <div className="cosmic-bg">
-        {!lowPerf && (
-          <video className="bg-video" autoPlay loop muted playsInline>
-            <source src={bgVideo} type="video/mp4" />
-          </video>
-        )}
+        <video className="bg-video" autoPlay loop muted playsInline>
+          <source src={bgVideo} type="video/mp4" />
+        </video>
         <div className="cosmic-overlay"></div>
         <div className="nebula-red"></div>
         <div className="nebula-blue"></div>

@@ -1,12 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import '../styles/Sponsors.css';
-import { useLowPerf } from "../hooks/useLowPerf";
-
-// Background Video
 import sponsersBg from '../assets/sponsers.mp4';
-
-// Demo Sponsor Icons
 import { FaGoogle, FaMicrosoft, FaAws, FaReact } from 'react-icons/fa';
 import { SiNvidia, SiOpenai, SiIntel, SiAmd, SiTesla, SiMeta, SiGooglecloud, SiCisco } from 'react-icons/si';
 
@@ -74,7 +69,6 @@ const getCardStyle = (index, activeIndex, totalCards) => {
 };
 
 const Sponsors = () => {
-  const lowPerf = useLowPerf();
   const [activeIndex, setActiveIndex] = useState(0);
   const N = demoSponsors.length;
   const videoRef = useRef(null);
@@ -118,25 +112,23 @@ const Sponsors = () => {
   return (
     <div className="sponsors-page">
       {/* Background Video */}
-      {!lowPerf && (
-        <video 
-          ref={videoRef}
-          autoPlay 
-          muted 
-          loop 
-          playsInline 
-          preload="auto" 
-          className="sponsors-bg-video"
-          onEnded={() => {
-            if (videoRef.current) {
-              videoRef.current.currentTime = 0;
-              videoRef.current.play().catch(err => console.log("Video manual loop failed:", err));
-            }
-          }}
-        >
-          <source src={sponsersBg} type="video/mp4" />
-        </video>
-      )}
+      <video 
+        ref={videoRef}
+        autoPlay 
+        muted 
+        loop 
+        playsInline 
+        preload="auto" 
+        className="sponsors-bg-video"
+        onEnded={() => {
+          if (videoRef.current) {
+            videoRef.current.currentTime = 0;
+            videoRef.current.play().catch(err => console.log("Video manual loop failed:", err));
+          }
+        }}
+      >
+        <source src={sponsersBg} type="video/mp4" />
+      </video>
 
       {/* Centered Sponsors Header */}
       <header className="sponsors-header">

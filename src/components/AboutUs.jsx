@@ -4,7 +4,6 @@ import citImage from "../assets/CIT_image.png";
 import clubImg from "../assets/club_img.jpeg";
 import { motion } from "framer-motion";
 import "../styles/AboutUs.css";
-import { useLowPerf } from "../hooks/useLowPerf";
 
 const aboutSections = [
   {
@@ -80,15 +79,11 @@ function AboutSection({ section }) {
 }
 
 function AboutUs() {
-  const lowPerf = useLowPerf();
-
   return (
     <section className="about-section">
-      {!lowPerf && (
-        <video autoPlay muted loop playsInline className="about-video-bg">
-          <source src={aboutVideo} type="video/mp4" />
-        </video>
-      )}
+      <video autoPlay muted loop playsInline className="about-video-bg">
+        <source src={aboutVideo} type="video/mp4" />
+      </video>
       <div className="about-video-overlay"></div>
 
       <div className="about-glow about-glow-1"></div>

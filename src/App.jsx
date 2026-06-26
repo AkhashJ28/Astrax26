@@ -14,17 +14,7 @@ import bgVideo from "./assets/hero.mp4";
 import introVideo from "./assets/intro.mp4";
 
 function App() {
-  const [lowPerf, setLowPerf] = useState(() => {
-    const saved = localStorage.getItem("low-perf") === "true";
-    window.lowPerfMode = saved;
-    return saved;
-  });
-
-  const [showIntro, setShowIntro] = useState(() => {
-    const savedLowPerf = localStorage.getItem("low-perf") === "true";
-    return !savedLowPerf;
-  });
-
+  const [showIntro, setShowIntro] = useState(true);
   const [fadeIntro, setFadeIntro] = useState(false);
   const videoRef = useRef(null);
 
@@ -42,22 +32,6 @@ function App() {
     }
   }, [activeTab]);
 
-  useEffect(() => {
-    if (lowPerf) {
-      document.body.classList.add("low-perf");
-    } else {
-      document.body.classList.remove("low-perf");
-    }
-  }, [lowPerf]);
-
-  const toggleLowPerf = () => {
-    const newVal = !lowPerf;
-    setLowPerf(newVal);
-    window.lowPerfMode = newVal;
-    localStorage.setItem("low-perf", String(newVal));
-    window.dispatchEvent(new Event("lowPerfChanged"));
-  };
-
   const handleIntroEnd = () => {
     setFadeIntro(true);
     setTimeout(() => setShowIntro(false), 800);
@@ -73,7 +47,7 @@ function App() {
 
   return (
     <div className="app">
-      {showIntro && !lowPerf && (
+      {showIntro && (
         <div className={`intro-preloader ${fadeIntro ? "fade-out" : ""}`}>
           <video
             ref={videoRef}
@@ -92,7 +66,7 @@ function App() {
         </div>
       )}
 
-      {activeTab === "Home" && !lowPerf && (
+      {activeTab === "Home" && (
         <>
           <video
             autoPlay
@@ -110,8 +84,6 @@ function App() {
       <Navbar 
         activeTab={activeTab} 
         onTabChange={handleTabChange} 
-        lowPerf={lowPerf} 
-        toggleLowPerf={toggleLowPerf} 
         forceHidden={hideNavbarOverride}
       />
 

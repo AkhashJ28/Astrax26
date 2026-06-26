@@ -107,55 +107,7 @@ body, .app, * {
   }
 }
 
-/* LITE PERFORMANCE MODE OVERRIDES */
-body.low-perf {
-  background: #080510 !important;
-}
 
-body.low-perf,
-body.low-perf * {
-  /* Disable heavy backdrop blurs */
-  backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  
-  /* Disable box-shadows and text-shadows */
-  box-shadow: none !important;
-  text-shadow: none !important;
-  
-  /* Disable infinite animations to stop repaint loops */
-  animation-delay: 0s !important;
-  animation-duration: 0s !important;
-  animation-iteration-count: 1 !important;
-}
-
-/* Fallback opaque backgrounds for glassmorphic elements */
-body.low-perf .navbar {
-  background: rgba(8, 5, 16, 0.98) !important;
-  border-bottom: 1px solid rgba(139, 92, 246, 0.2) !important;
-}
-
-body.low-perf .event-card,
-body.low-perf .shield-dossier,
-body.low-perf .gallery-card,
-body.low-perf .sponsor-item,
-body.low-perf .workshop-card,
-body.low-perf .sponsor-3d-card {
-  background: #130e26 !important;
-  border: 1px solid rgba(139, 92, 246, 0.25) !important;
-}
-
-/* Disable scroll-linked parallax-like or heavy filter effects */
-body.low-perf .cosmic-overlay,
-body.low-perf .about-video-overlay,
-body.low-perf .workshop-overlay-fixed {
-  background: rgba(8, 5, 16, 0.9) !important;
-}
-
-body.low-perf .about-glow,
-body.low-perf .nebula-red,
-body.low-perf .nebula-blue {
-  display: none !important;
-}
 
 /* Enable Hardware Acceleration for smooth rendering & scrolling */
 .navbar, 

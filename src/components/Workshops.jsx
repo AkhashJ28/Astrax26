@@ -1,8 +1,6 @@
 import { useState } from "react";
 import "../styles/Workshop.css";
 import upcomingVideo from "../assets/upcoming.mp4";
-import { useLowPerf } from "../hooks/useLowPerf";
-
 const defenseWorkshops = [
   {
     id: "def-1",
@@ -58,7 +56,6 @@ const cognitionWorkshops = [
 ];
 
 function Workshops({ setActivePage, onToggleExpand }) {
-  const lowPerf = useLowPerf();
   const [isOpen, setIsOpen] = useState(false);
   const [activeSide, setActiveSide] = useState(null); // "left", "right", or null
 
@@ -102,11 +99,9 @@ function Workshops({ setActivePage, onToggleExpand }) {
       {!isOpen ? (
         // COLLAPSED / COMING SOON VIEW (Full Screen Video Background)
         <>
-          {!lowPerf && (
-            <video autoPlay muted loop playsInline className="workshop-video-bg">
-              <source src={upcomingVideo} type="video/mp4" />
-            </video>
-          )}
+          <video autoPlay muted loop playsInline className="workshop-video-bg">
+            <source src={upcomingVideo} type="video/mp4" />
+          </video>
           <div className="workshop-overlay-fixed"></div>
           
           <button className="teaser-back-to-home-btn" onClick={() => setActivePage("Home")}>

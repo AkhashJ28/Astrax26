@@ -10,7 +10,7 @@ import "../styles/Navbar.css";
 
 // src/components/Navbar.jsx
 
-function Navbar({ activeTab, onTabChange, lowPerf, toggleLowPerf, forceHidden }) {
+function Navbar({ activeTab, onTabChange, forceHidden }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [showNavbar, setShowNavbar] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
@@ -85,14 +85,6 @@ function Navbar({ activeTab, onTabChange, lowPerf, toggleLowPerf, forceHidden })
           Sponsors
         </li>
         <li className="nav-mobile-register">
-          <button 
-            className={`lite-mode-btn ${lowPerf ? 'active' : ''}`} 
-            onClick={toggleLowPerf}
-            style={{ width: "100%", justifyContent: "center", marginBottom: "10px" }}
-          >
-            <span className="lite-mode-dot"></span>
-            {lowPerf ? "LITE MODE: ON" : "LITE MODE: OFF"}
-          </button>
           <button className="register-btn mobile-reg-btn" onClick={() => handleTabClick("Workshops")}>
             Register Now
           </button>
@@ -100,14 +92,6 @@ function Navbar({ activeTab, onTabChange, lowPerf, toggleLowPerf, forceHidden })
       </ul>
 
       <div className="nav-actions-container">
-        <button 
-          className={`lite-mode-btn desktop-lite-btn ${lowPerf ? 'active' : ''}`} 
-          onClick={toggleLowPerf}
-        >
-          <span className="lite-mode-dot"></span>
-          {lowPerf ? "LITE MODE: ON" : "LITE MODE: OFF"}
-        </button>
-
         <button className="register-btn desktop-reg-btn" onClick={() => handleTabClick("Workshops")}>
           Register Now
         </button>
