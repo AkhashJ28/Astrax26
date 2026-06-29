@@ -3,12 +3,12 @@ import gsap from "gsap";
 import "../styles/Events.css";
 
 import eventDebate from "../assets/event-debate.png";
-import eventTva from "../assets/event-tva.png";
+import eventTva from "../assets/event-tvh.jpeg";
 import eventTechnova from "../assets/event-technova.png";
-import eventNeural from "../assets/event-neural.png";
-import eventPixel from "../assets/event-pixel.png";
-import eventNexus from "../assets/event-nexus.png";
-import eventIdeathon from "../assets/event-ideathon.png";
+import eventNeural from "../assets/event-neural.jpeg";
+import eventPixel from "../assets/event-pixel.jpeg";
+import eventNexus from "../assets/event-nexus.jpeg";
+import eventIdeathon from "../assets/event-ideathon.jpeg";
 import bgVideo from "../assets/bg-video.mp4";
 import titleCard from "../assets/title card.png";
 import eyeOfAgamotto from "../assets/eye of agamotto.png";
@@ -441,18 +441,6 @@ function Events() {
             <div className={`agamotto-click-guide ${infoOpen ? "info-open" : ""}`}>
               <span className="guide-text">[ CLICK EYE IMAGE TO REVEAL SAGA DETAILS ]</span>
             </div>
-
-            {/* Dot indicators */}
-            <div className="event-dots">
-              {eventDatabase.map((_, i) => (
-                <button
-                  key={i}
-                  className={`event-dot${i === currentIdx ? " active" : ""}`}
-                  onClick={() => i !== currentIdx && triggerTransition(i)}
-                  aria-label={`Go to ${eventDatabase[i].title}`}
-                />
-              ))}
-            </div>
           </div>
 
           {/* Info card — modal overlay */}
@@ -490,41 +478,11 @@ function Events() {
           </div>
         </section>
 
-        {/* ── Timeline ── */}
-        <section id="timeline" className="timeline-section">
-          <div className="section-header">
-            <h2 className="section-title">CHRONOLOGY OF POWER</h2>
-            <p className="section-subtitle">How Astra-X expanded its territory in the college event universe.</p>
-          </div>
-          <div className="timeline-container" ref={timelineRef}>
-            <div className="timeline-line">
-              <div className="timeline-progress" ref={progressLineRef}></div>
-            </div>
-            {[
-              { year: 2025, title: "Multiverse Expansion",  desc: "Achieved a footprint of 600+ national participants. Expanded tech tracks into AI, Machine Learning, and Web3 integration, cementing Astra-X as a top regional tech conclave." },
-              { year: 2024, title: "The Age of Iron",        desc: "Introduced bulletproof arena combat robots and speed drone piloting obstacles. Witnessed the heaviest bots colliding in a record-breaking spectacle." },
-              { year: 2023, title: "Infinity Codex",         desc: "Initiated high-speed competitive programming and Cyber Security CTF battles. Developed custom capture-the-flag servers to challenge 500+ security enthusiasts." },
-              { year: 2022, title: "Creative Dimension",     desc: "Pioneered UI/UX design masterclasses and dynamic 48-hour game jams, opening up Astra-X to digital designers and storytellers." },
-              { year: 2021, title: "Quantum Genesis",        desc: "The spark that ignited the legacy. Conducted a fully virtual, cryptic puzzle-solving event that reached 800+ participants during challenging circumstances." },
-            ].map((node, i) => (
-              <div key={node.year} className="timeline-node" ref={el => nodesRef.current[i] = el}>
-                <div className="timeline-marker"></div>
-                <div className="timeline-content">
-                  <span className="timeline-year">{node.year}</span>
-                  <h3 className="timeline-heading">{node.title}</h3>
-                  <p className="timeline-body">{node.desc}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-
         {/* ── Stats ── */}
         <section id="achievements" className="achievements-section" ref={statsContainerRef}>
           <div className="achievements-container">
             {[
               { target: 3000,   label: "Expected Heroes" },
-              { target: 500,    label: "Projects to Deploy" },
               { target: 7,      label: "Upcoming Sagas" },
               { target: 35000, label: "Prizes to Win (₹)" },
             ].map((stat, i) => (
