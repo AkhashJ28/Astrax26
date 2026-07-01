@@ -104,9 +104,7 @@ function Workshops({ setActivePage, onToggleExpand }) {
           </video>
           <div className="workshop-overlay-fixed"></div>
           
-          <button className="teaser-back-to-home-btn" onClick={() => setActivePage("Home")}>
-            ← Back to Home
-          </button>
+
  
           <div className="workshop-teaser-fullscreen" onClick={handleToggle}>     
             <div className="teaser-content">
